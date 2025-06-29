@@ -1,0 +1,186 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Foydalanuvchi profili {% endblock title %}
+
+{% block content %}
+
+<!-- Font Awesome ikonkalar uchun (faqat kerak bo‘lsa) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    body {
+        background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .profile-container {
+        max-width: 1200px;
+        margin: 60px auto;
+        margin-top: 350px;
+        padding: 40px 30px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        color: #333;
+        animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 20px auto;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .profile-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    }
+
+    .profile-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 28px;
+        color: #222;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .profile-info {
+        margin-top: 20px;
+    }
+
+    .profile-info label {
+        font-weight: 600;
+        display: block;
+        margin-top: 15px;
+        color: #444;
+    }
+
+    .profile-info .field-with-icon {
+        position: relative;
+    }
+
+    .profile-info i {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        color: #888;
+    }
+
+    .profile-info input {
+        width: 100%;
+        padding: 10px 10px 10px 35px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: #f9f9f9;
+        color: #333;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .profile-info input:focus {
+        box-shadow: 0 0 5px rgba(0,123,255,0.5);
+        outline: none;
+    }
+
+    .profile-buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .profile-buttons a {
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-weight: bold;
+        color: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+
+    .btn-password {
+        background: linear-gradient(45deg, #36d1dc, #5b86e5);
+    }
+
+    .btn-edit {
+        background: linear-gradient(45deg, #ff5f6d, #ffc371);
+    }
+
+    .profile-buttons a:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+        .profile-container {
+            padding: 20px 15px;
+        }
+        .profile-buttons {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<div class="profile-container">
+    {% if profile.photo %}
+        <img src="{{ profile.photo.url }}" alt="Profil rasmi" class="profile-image">
+    {% else %}
+        <img src="{% static 'images/default-user.png' %}" alt="Default profil" class="profile-image">
+    {% endif %}
+
+    <h2 class="profile-title">Xush kelibsiz, {{ user.username }}</h2>
+
+    <div class="profile-info">
+        <label>Tug‘ilgan sana:</label>
+        <div class="field-with-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+            <input value="{{ profile.date_of_birth }}" readonly>
+        </div><label>Username:</label>
+        <div class="field-with-icon">
+            <i class="fa-solid fa-user"></i>
+            <input value="{{ user.username }}" readonly>
+        </div>
+
+        <label>Emailingiz:</label>
+        <div class="field-with-icon">
+            <i class="fa-solid fa-envelope"></i>
+            <input value="{{ user.email }}" readonly placeholder="Kiritilmagan">
+        </div>
+
+        <label>Ismingiz:</label>
+        <div class="field-with-icon">
+            <i class="fa-solid fa-user-tag"></i>
+            <input value="{{ user.first_name }}" readonly placeholder="Kiritilmagan">
+        </div>
+
+        <label>Familiyangiz:</label>
+        <div class="field-with-icon">
+            <i class="fa-solid fa-user-group"></i>
+            <input value="{{ user.last_name }}" readonly placeholder="Kiritilmagan">
+        </div>
+    </div>
+
+    <div class="profile-buttons">
+        <a href="{% url 'password_change' %}" class="btn-password"><i class="fa-solid fa-key"></i> Parolni almashtirish</a>
+        <a href="{% url 'edit_user_information' %}" class="btn-edit"><i class="fa-solid fa-pen"></i> Ma'lumotlarni tahrirlash</a>
+    </div>
+</div>
+
+{% endblock content %}

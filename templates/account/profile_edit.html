@@ -1,0 +1,17 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Foydalanuvchi ma'lumotlarini tahrirlash {% endblock title %}
+
+{% block content %}
+
+    <h1>Foydalanuvchi ma'lumotlarini tahrirlash</h1>
+    <p>Siz o'z haqingizdagi ma'lumotlarni quyidagi forma orqali tahrirlashingiz mumkin:</p>
+
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <button type="submit">O'zgarishlarni saqlash</button>
+    </form>
+
+{% endblock content %}
