@@ -1,6 +1,7 @@
 {% extends 'news/base.html' %}
 {% load static %}
 {% load hitcount_tags %}
+{% load i18n %}
 
 {% block title %} {{ news.title }} {% endblock title %}
 {% block content %}
@@ -19,9 +20,9 @@
             </div>
             {% if request.user.is_authenticated and request.user.is_superuser %}
             <div class="card-footer text-center">
-              <a href="{% url 'news_update' news.slug %}" class="btn default-btn">Tahrirlash</a>
-              <a href="{% url 'news_delete' news.slug %}" class="btn btn-red">O'chirish</a>
-              <a href="{% url 'news_create' %}" class="btn btn-green">Yangilik qo'shish</a>
+              <a href="{% url 'news_update' news.slug %}" class="btn default-btn">{% blocktrans %}Tahrirlash{% endblocktrans %}</a>
+              <a href="{% url 'news_delete' news.slug %}" class="btn btn-red">{% blocktrans %}O'chirish{% endblocktrans %}</a>
+              <a href="{% url 'news_create' %}" class="btn btn-green">{% blocktrans %}Yangilik qo'shish{% endblocktrans %}</a>
             </div>
             {% endif %}
             <div class="social_link">
@@ -47,7 +48,7 @@
         </div>
         <br>
         {% if comment_count > 0 %}
-        <h3>Bu yangilikka {{ comment_count }} ta izoh qoldirilgan</h3>
+        <h3>{{ comment_count }} {% blocktrans %}ta izoh qoldirilgan{% endblocktrans %}</h3>
         {% endif %}
         {% for comment in comments %}
             <div class="comments" style="padding: 10px">
@@ -64,11 +65,11 @@
         <div class="col-md-8 card mb-4 mt-3">
             {% if user.is_authenticated %}
             <div class="card-body">
-                <h3>Izoh qoldirish</h3>
+                <h3>{% blocktrans %}Izoh qoldirish{% endblocktrans %}</h3>
                 <form method="post" style="margin-top: 1.3em">{% csrf_token %}
                     {{ comment_form.as_p }}
                     <button type="submit" class="btn btn-primary btn-large">
-                        Yuborish
+                        {% blocktrans %}Yuborish{% endblocktrans %}
                     </button>
                 </form>
             </div>
@@ -76,8 +77,8 @@
             <div class="card-body">
                 <p class="text-danger">Faqatgina ro'yxatdan o'tgan foydalanuvchilar izoh qoldirishi mumkin!</p>
                 <p>Izoh qoldirish uchun
-                    <a href="{% url 'user_register' %}">ro'yxatdan o'ting</a>
-                    yoki <a href="{% url 'login' %}">Saytga kiring</a>.
+                    <a href="{% url 'user_register' %}">{% blocktrans %}Ro'yxatdan o'ting{% endblocktrans %}</a>
+                    yoki <a href="{% url 'login' %}">{% blocktrans %}Saytga kiring{% endblocktrans %}</a>.
                 </p>
             </div>
             {% endif %}
@@ -86,7 +87,7 @@
       <div class="col-lg-4 col-md-4 col-sm-4">
         <aside class="right_content">
           <div class="single_sidebar">
-            <h2><span>Ommabop</span></h2>
+            <h2><span>{% blocktrans %} Ommabop {% endblocktrans %}</span></h2>
             <ul class="spost_nav">
               <li>
                 <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{% static 'images/post_img1.jpg' %}"> </a>

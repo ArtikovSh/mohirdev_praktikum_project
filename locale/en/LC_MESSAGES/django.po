@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-29 23:12+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\config\settings.py:114
+msgid "Uzbek"
+msgstr "Uzbek"
+
+#: .\config\settings.py:115
+msgid "English"
+msgstr "English"
+
+#: .\config\settings.py:116
+msgid "Russian"
+msgstr "Russian"
+
+#: .\templates\news\home.html:7
+msgid " Bosh sahifa "
+msgstr " HomePage "
+
+#: .\templates\news\home.html:26
+msgid " So'ngi postlar "
+msgstr " Latest Posts "
+
+#: .\templates\news\home.html:35 .\templates\news\home.html:61
+#: .\templates\news\home.html:76 .\templates\news\home.html:96
+#: .\templates\news\home.html:109 .\templates\news\home.html:128
+#: .\templates\news\home.html:141 .\templates\news\home.html:196
+msgid " Ko'rishlar soni: "
+msgstr " View count "
+
+#: .\templates\news\home.html:52
+msgid " Mahalliy "
+msgstr " Local "
+
+#: .\templates\news\home.html:88
+msgid " Xorij "
+msgstr " Foreign "
+
+#: .\templates\news\home.html:120
+msgid " Texnologiya "
+msgstr " Technology "
+
+#: .\templates\news\home.html:187
+msgid " Sport "
+msgstr " Sport "
+
+#: .\templates\news\home.html:211
+msgid " Ko'rishlar soni:"
+msgstr " View count "
+
+#: .\templates\news\home.html:225
+msgid " Ommabop "
+msgstr " Popular "
+
+#: .\templates\news\home.html:298
+msgid " Barcha kategoriyalar "
+msgstr " All categories "
+
+#: .\templates\news\home.html:300
+msgid " Kateforiyani tanlang "
+msgstr " Choose category "
+
+#: .\templates\news\mahalliy.html:6
+#, fuzzy
+#| msgid " Mahalliy "
+msgid "Mahalliy xabarlar"
+msgstr " Local "
+
+#: .\templates\news\mahalliy.html:13
+#, fuzzy
+#| msgid " Mahalliy "
+msgid "Mahalliy"
+msgstr " Local "
+
+#: .\templates\news\mahalliy.html:22 .\templates\news\mahalliy.html:38
+#: .\templates\news\sport.html:22 .\templates\news\sport.html:38
+#: .\templates\news\texnologiya.html:22 .\templates\news\texnologiya.html:38
+#: .\templates\news\xorij.html:22 .\templates\news\xorij.html:38
+#, fuzzy
+#| msgid " Ko'rishlar soni:"
+msgid "Ko'rishlar soni:"
+msgstr " View count "
+
+#: .\templates\news\mahalliy.html:52 .\templates\news\news_detail.html:90
+#: .\templates\news\sport.html:52 .\templates\news\texnologiya.html:52
+#: .\templates\news\xorij.html:52
+#, fuzzy
+#| msgid " Ommabop "
+msgid "Ommabop"
+msgstr " Popular "
+
+#: .\templates\news\news_detail.html:23
+msgid "Tahrirlash"
+msgstr "Edit"
+
+#: .\templates\news\news_detail.html:24
+msgid "O'chirish"
+msgstr "Delete"
+
+#: .\templates\news\news_detail.html:25
+msgid "Yangilik qo'shish"
+msgstr "Add post"
+
+#: .\templates\news\news_detail.html:51
+msgid "ta izoh qoldirilgan"
+msgstr "comments"
+
+#: .\templates\news\news_detail.html:68
+msgid "Leave a comment"
+msgstr ""
+
+#: .\templates\news\news_detail.html:72
+msgid "Yuborish"
+msgstr "Send"
+
+#: .\templates\news\news_detail.html:80
+msgid "Ro'yxatdan o'ting"
+msgstr "Sign Up"
+
+#: .\templates\news\news_detail.html:81
+msgid "Saytga kiring"
+msgstr "Login"
+
+#: .\templates\news\sport.html:6
+msgid "Sport xabarlari"
+msgstr "Sport news"
+
+#: .\templates\news\sport.html:13
+#, fuzzy
+#| msgid " Sport "
+msgid "Sport"
+msgstr " Sport "
+
+#: .\templates\news\texnologiya.html:6
+#, fuzzy
+#| msgid " Texnologiya "
+msgid "Texnologik xabarlar"
+msgstr " Technology "
+
+#: .\templates\news\texnologiya.html:13
+#, fuzzy
+#| msgid " Texnologiya "
+msgid "Texnologiya"
+msgstr " Technology "
+
+#: .\templates\news\xorij.html:6
+msgid "Xorij xabarlari"
+msgstr "Foreign news"
+
+#: .\templates\news\xorij.html:13
+#, fuzzy
+#| msgid " Xorij "
+msgid "Xorij"
+msgstr " Foreign "
